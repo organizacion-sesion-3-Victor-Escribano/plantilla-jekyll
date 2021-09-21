@@ -10,32 +10,18 @@
 
   <body>
 
-    <header>
-      {% include header.html %}
-    </header>
-
-    <nav>
-      {% include nav.html %}
-    </nav>
-
-    <aside>
-      {% include aside.html %}
-    </aside>
-
-    <section>
-      {{---
-layout: layout
-title: Página de blog
-permalink: /blog
----
-      <p>{{ page.date }}</p>
-
-{{ content }}}}
-    </section>
-
-    <footer>
-      {% include footer.html %}
-    </footer>
+    <h2> Listado de posts </h2>
+    
+    <ul>
+        <li>
+            {% for post in site.posts %}
+          <a href="{{site.baseur1}}{{post.url}}"> {{post.title}} - {{post.date}} </a>
+          <p> {{post.content}} </p>
+         </li>
+      
+        {% endfor %}
+      
+    </ul>
 
   </body>
 
